@@ -7,12 +7,13 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Create Next App</title>
-      </Head>
-      <main className={styles.main}>
-      </main>
-    </>
-  )
+		<>
+			<Head>
+				<title>Create Next App</title>
+			</Head>
+			<main className={styles.main}>
+				<h1 className="text-4xl font-bold underline ">Hello world!</h1>
+			</main>
+		</>
+	);
 }
