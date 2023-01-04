@@ -18,7 +18,7 @@ function Box(props: ThreeElements["mesh"]) {
 
 	return (
 		<mesh ref={myMesh} {...props} onClick={(event) => setWireframe(!wireframe)}>
-			<boxGeometry args={[2, 2, 2]} />
+			<boxGeometry args={[3, 3, 3]} />
 			<Edges />
 			<meshLambertMaterial
 				attach="material"
@@ -31,8 +31,8 @@ function Box(props: ThreeElements["mesh"]) {
 
 export default function Cube({}: Props) {
 	return (
-		<div className="flex justify-center">
-			<div className="h-56 w-56">
+		<div className="m-0 flex justify-center p-0">
+			<div className="-mt-20 h-56 w-56">
 				<Canvas shadows>
 					<OrbitControls enableZoom={false} enablePan={false} />
 					<directionalLight color="red" position={[0, 0, 5]} />

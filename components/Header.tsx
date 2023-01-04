@@ -10,7 +10,7 @@ export default function Header({}: Props) {
 			{/* Icons */}
 			<motion.div
 				initial={{
-					x: -500,
+					x: -100,
 					opacity: 0,
 					scale: 0,
 				}}
@@ -43,7 +43,7 @@ export default function Header({}: Props) {
 
 			<motion.div
 				initial={{
-					x: 500,
+					x: 100,
 					opacity: 0,
 					scale: 0,
 				}}
