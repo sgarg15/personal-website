@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import Cube from "../components/Cube";
+import Header from "../components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,10 +13,13 @@ export default function Home() {
 			<Head>
 				<title>Create Next App</title>
 			</Head>
-			<Cube></Cube>
-			{/* <main className={styles.main}>
-				<h1 className="text-4xl font-bold underline ">Hello world!</h1>
-			</main> */}
+
+			{/* <Cube /> */}
+
+			{/* Header */}
+			<Header />
+
+			{/* Hero */}
 		</>
 	);
 }
