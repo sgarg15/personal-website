@@ -1,6 +1,7 @@
 import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
+import ModelViewer from "./ModelViewer";
 
 type Props = {};
 
@@ -8,38 +9,41 @@ export default function Header({}: Props) {
 	return (
 		<header className="flex-items-start sticky top-0 z-20 mx-auto flex max-w-7xl justify-between p-5 xl:items-center">
 			{/* Icons */}
-			<motion.div
-				initial={{
-					x: -100,
-					opacity: 0,
-					scale: 0,
-				}}
-				animate={{
-					x: 0,
-					opacity: 1,
-					scale: 1,
-				}}
-				transition={{
-					duration: 1.5,
-				}}
-				className="flex flex-row items-center"
-			>
-				<SocialIcon
-					url="https://github.com/sgarg15"
-					fgColor="gray"
-					bgColor="transparent"
-				/>
-				<SocialIcon
-					url="https://github.com/sgarg15"
-					fgColor="gray"
-					bgColor="transparent"
-				/>
-				<SocialIcon
-					url="https://github.com/sgarg15"
-					fgColor="gray"
-					bgColor="transparent"
-				/>
-			</motion.div>
+			<div className="flex items-center">
+				<ModelViewer modelPath={"/queenTest.glb"} />
+				<motion.div
+					initial={{
+						x: -100,
+						opacity: 0,
+						scale: 0,
+					}}
+					animate={{
+						x: 0,
+						opacity: 1,
+						scale: 1,
+					}}
+					transition={{
+						duration: 1.5,
+					}}
+					className="flex flex-row items-center"
+				>
+					<SocialIcon
+						url="https://github.com/sgarg15"
+						fgColor="gray"
+						bgColor="transparent"
+					/>
+					<SocialIcon
+						url="https://github.com/sgarg15"
+						fgColor="gray"
+						bgColor="transparent"
+					/>
+					<SocialIcon
+						url="https://github.com/sgarg15"
+						fgColor="gray"
+						bgColor="transparent"
+					/>
+				</motion.div>
+			</div>
 
 			<motion.div
 				initial={{
