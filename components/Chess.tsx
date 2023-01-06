@@ -16,19 +16,17 @@ const Queen = () => {
 
 export default function Chess({}: Props) {
 	return (
-		<div className="m-0 flex justify-center p-0">
-			<div className="h-66 w-66 -mt-20">
-				<Canvas camera={{ zoom: 0.3 }}>
-					<Suspense fallback={null}>
-						<Queen />
-						<OrbitControls enableZoom={false} enablePan={false} />
-						<ambientLight />
-						<directionalLight color="red" position={[0, 0, 5]} />
-						<pointLight position={[10, 10, 10]} />
-					</Suspense>
-					<axesHelper />
-				</Canvas>
-			</div>
+		<div className=" mt-20">
+			<Canvas>
+				<Suspense fallback={null}>
+					<Queen />
+					<OrbitControls position={[0, 0, 0]} autoRotate />
+					<ambientLight />
+					<directionalLight color="red" position={[0, 0, 5]} />
+					<pointLight position={[10, 10, 10]} />
+				</Suspense>
+				<axesHelper />
+			</Canvas>
 		</div>
 	);
 }

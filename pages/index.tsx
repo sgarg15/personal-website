@@ -6,6 +6,8 @@ import Cube from "../components/Cube";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import About from '../components/About';
+import Chess from "../components/Chess";
+import ModelViewer from "../components/ModelViewer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +19,7 @@ export default function Home() {
 			</Head>
 
 			{/* <Cube /> */}
+			{/* <Chess /> */}
 
 			{/* Header */}
 			<Header />
