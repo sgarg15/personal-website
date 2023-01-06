@@ -5,7 +5,6 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 const GltfModel = ({ modelPath = "", scale = 40, position = [0, 0, 0] }) => {
 	const ref = useRef<THREE.Mesh>(null!);
 	const gltf = useLoader(GLTFLoader, modelPath);
-	console.log("GltfModel: modelPath: ", modelPath);
 
 	// Subscribe this component to the render-loop, rotate the mesh every frame
 	useFrame((state, delta) => {

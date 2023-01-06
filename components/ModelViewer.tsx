@@ -4,7 +4,6 @@ import { OrbitControls } from "@react-three/drei";
 import GltfModel from "./GltfModel";
 
 const ModelViewer = ({ modelPath = "", scale = 1, position = [0, 0.5, 0] }) => {
-	console.log("ModelViewer: modelPath: ", modelPath);
 	return (
 		<div className="h-16 w-14 ">
 			<Canvas>

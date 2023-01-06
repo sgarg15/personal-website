@@ -3,11 +3,15 @@ import { motion } from "framer-motion";
 import Chess from "./Chess";
 //import react icons
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { BsGear } from "react-icons/bs";
-
+import { BsGear, BsCode, BsGithub } from "react-icons/bs";
+import { AiOutlinePaperClip } from "react-icons/ai";
+import type { GetStaticProps, GetStaticPropsResult } from "next/types";
 type Props = {};
 
-export default function About({}: Props) {
+export default function About({ repoCount }: any) {
+	console.log(repoCount);
+	const date = new Date();
+
 	return (
 		<motion.div
 			initial={{
@@ -19,9 +23,9 @@ export default function About({}: Props) {
 			transition={{
 				duration: 1.5,
 			}}
-			className="relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center md:flex-row md:text-left"
+			className="relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center md:flex-row md:text-left "
 		>
-			<h3 className="absolute top-24 select-none text-2xl uppercase tracking-[20px] text-gray-500">
+			<h3 className="absolute top-24 select-none pl-[20px] text-center text-2xl uppercase tracking-[20px] text-gray-500">
 				About
 			</h3>
 
@@ -39,10 +43,8 @@ export default function About({}: Props) {
 					opacity: 1,
 				}}
 				viewport={{ once: true }}
-				className="md:h-95 -mb-20 h-44 w-44 flex-shrink-0 rounded-full object-cover md:mb-0 md:w-64 md:rounded-lg xl:h-[400px] xl:w-[400px]"
+				className="md:h-95 -mb-20 h-44 w-44 flex-shrink-0 items-center rounded-full object-cover text-center md:mb-0 md:w-64 md:rounded-lg xl:h-[400px] xl:w-[400px]"
 			/>
-			{/* md:h-95 h-46 w-46 -mb-20 flex-shrink-0 rounded-full object-cover md:mb-0 md:w-64 md:rounded-lg xl:h-[400px] xl:w-[400px] */}
-			{/* <Chess /> */}
 
 			<div className="space-y-10 px-0 md:px-10">
 				<h4 className="text-4xl font-semibold">
@@ -58,13 +60,35 @@ export default function About({}: Props) {
 					found on my resume.
 				</p>
 
-				<div>
+				<div className="ml-10 flex flex-col ">
 					<div className="flex items-center">
-						<BsGear className="mr-5 inline-block text-3xl" />
-						20 projects
+						<BsGithub className="mr-5 inline-block text-3xl" />
+						<p className="text-left text-base uppercase tracking-widest text-gray-300">
+							{repoCount} Repositories
+						</p>
+					</div>
+					<div className="mt-5 flex items-center">
+						<BsCode className="mr-5 inline-block text-3xl" />
+						<p className="text-left text-base uppercase tracking-widest text-gray-300 ">
+							{date.getFullYear() - 2017} Years of Programming
+						</p>
+					</div>
+					<div className="mt-5 flex items-center text-left">
+						<AiOutlinePaperClip className="mr-5 inline-block text-3xl" />
+						<p
+							onClick={handleClick}
+							className="text-base uppercase tracking-widest text-gray-300 "
+						>
+							Download My Resume
+						</p>
 					</div>
 				</div>
 			</div>
 		</motion.div>
 	);
 }
+
+function handleClick() {
+	window.open("/Resume.pdf");
+}
+

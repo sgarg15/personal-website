@@ -8,10 +8,11 @@ import Hero from "../components/Hero";
 import About from '../components/About';
 import Chess from "../components/Chess";
 import ModelViewer from "../components/ModelViewer";
+import { GetStaticProps } from "next/types";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({ repoCount }: any) {
 	return (
 		<div className="z-0 h-screen snap-y snap-mandatory overflow-scroll bg-[rgb(36,36,36)] text-white">
 			<Head>
@@ -31,8 +32,19 @@ export default function Home() {
 
 			{/* About */}
 			<section id="about" className="snap-center">
-				<About />
+				<About repoCount={repoCount} />
 			</section>
 		</div>
 	);
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+	const data = await fetch("https://api.github.com/users/sgarg15/repos");
+	const json = await data.json();
+
+	return {
+		props: {
+			repoCount: json.length,
+		},
+	};
+};
