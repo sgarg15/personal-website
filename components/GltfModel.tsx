@@ -8,6 +8,7 @@ const GltfModel = ({ modelPath = "", scale = 40, position = [0, 0, 0] }) => {
 
 	// Subscribe this component to the render-loop, rotate the mesh every frame
 	useFrame((state, delta) => {
+		ref.current.rotation.x = 0.3;
 		ref.current.rotation.y += 0.005;
 		// ref.current.rotation.x -= 0.002;
 		// ref.current.rotation.z += 0.002;
