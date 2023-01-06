@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import Chess from "./Chess";
 //import react icons
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { BsGear, BsCode, BsGithub } from "react-icons/bs";
 import { AiOutlinePaperClip } from "react-icons/ai";
 import type { GetStaticProps, GetStaticPropsResult } from "next/types";
@@ -73,7 +72,7 @@ export default function About({ repoCount }: any) {
 							{date.getFullYear() - 2017} Years of Programming
 						</p>
 					</div>
-					<div className="mt-5 flex items-center text-left">
+					<div className="mt-5 flex items-center text-left cursor-pointer">
 						<AiOutlinePaperClip className="mr-5 inline-block text-3xl" />
 						<p
 							onClick={handleClick}
