@@ -9,12 +9,13 @@ import About from '../components/About';
 import Chess from "../components/Chess";
 import ModelViewer from "../components/ModelViewer";
 import { GetStaticProps } from "next/types";
+import WorkExperience from "../components/WorkExperience";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ repoCount }: any) {
 	return (
-		<div className="z-0 h-screen snap-y snap-mandatory overflow-scroll bg-[rgb(36,36,36)] text-white">
+		<div className="z-0 h-screen snap-y snap-mandatory overflow-x-hidden scroll-smooth bg-[rgb(36,36,36)] text-white">
 			<Head>
 				<title>Create Next App</title>
 			</Head>
@@ -33,6 +34,11 @@ export default function Home({ repoCount }: any) {
 			{/* About */}
 			<section id="about" className="snap-center">
 				<About repoCount={repoCount} />
+			</section>
+
+			{/* Experience */}
+			<section id="experience" className="snap-end">
+				<WorkExperience />
 			</section>
 		</div>
 	);

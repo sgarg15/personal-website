@@ -8,7 +8,6 @@ import type { GetStaticProps, GetStaticPropsResult } from "next/types";
 type Props = {};
 
 export default function About({ repoCount }: any) {
-	console.log(repoCount);
 	const date = new Date();
 
 	return (
@@ -72,7 +71,7 @@ export default function About({ repoCount }: any) {
 							{date.getFullYear() - 2017} Years of Programming
 						</p>
 					</div>
-					<div className="mt-5 flex items-center text-left cursor-pointer">
+					<div className="mt-5 flex cursor-pointer items-center text-left">
 						<AiOutlinePaperClip className="mr-5 inline-block text-3xl" />
 						<p
 							onClick={handleClick}
