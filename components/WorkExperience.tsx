@@ -74,19 +74,20 @@ export default function WorkExperience({}: Props) {
 			</h3>
 
 			<div className="flex flex-row">
-				{/* <button className=" btn-scroll-left inset-y-0 w-16 pr-6">
+				<button className=" btn-scroll-left inset-y-0 w-16 pr-6">
 					<MdOutlineArrowBackIosNew className="text-2xl" />
-				</button> */}
+				</button>
 				<div
 					ref={containerRef}
-					className="no-scrollbar flex w-full snap-x snap-mandatory justify-center space-x-5 overflow-x-scroll p-10"
+					className="no-scrollbar flex w-full snap-x snap-mandatory space-x-5 overflow-x-scroll p-10"
 				>
 					{/* Experience Cards */}
 					<ExperienceCard />
+					<ExperienceCard />
 				</div>
-				{/* <button className="btn-scroll-right inset-y-0 w-16 pl-6 ">
+				<button className="btn-scroll-right inset-y-0 w-16 pl-6 ">
 					<MdOutlineArrowForwardIos className="text-2xl" />
-				</button> */}
+				</button>
 			</div>
 		</motion.div>
 	);

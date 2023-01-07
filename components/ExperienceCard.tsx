@@ -1,11 +1,29 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { useRef, useEffect } from "react";
+import VanillaTilt from "vanilla-tilt";
 
 type Props = {};
 
 export default function ExperienceCard({}: Props) {
+	const elementRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		if (elementRef.current) {
+			new VanillaTilt(elementRef.current, {
+				max: 2, // maximum tilt angle
+				perspective: 1000, // perspective value
+				scale: 1.02, // scale on hover
+				speed: 200, // tilt speed
+			});
+		}
+	}, []);
+
 	return (
-		<article className="flex w-[500px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-50 transition-opacity duration-300 hover:opacity-100 md:w-[500px] xl:w-[900px]">
+		<article
+			ref={elementRef}
+			className="flex w-[500px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-50 transition-opacity duration-300 hover:opacity-100 md:w-[500px] xl:w-[900px]"
+		>
 			<motion.img
 				initial={{
 					y: -100,
