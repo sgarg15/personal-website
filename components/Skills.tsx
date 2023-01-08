@@ -49,17 +49,18 @@ export default function Skills({}: Props) {
 			transition={{
 				duration: 1.5,
 			}}
-			className="relative mx-auto h-screen max-w-6xl flex-col items-center justify-evenly px-10 pt-24 text-left md:flex-row"
+			className="relative mx-auto flex h-screen max-w-6xl flex-col items-center justify-center px-10 text-center md:flex-row md:text-left "
 		>
-			<h3 className="select-none pl-[20px] text-center text-2xl uppercase tracking-[20px] text-gray-500">
+			<h3 className="absolute top-24 select-none pl-[20px] text-center text-2xl uppercase tracking-[20px] text-gray-500">
 				Skills
 			</h3>
+
 			<motion.div
 				initial="hidden"
 				whileInView="visible"
 				variants={FadeContainer}
 				viewport={{ once: true }}
-				className="my-10 grid grid-cols-3 gap-4"
+				className="my-10 grid w-full grid-cols-3 gap-4"
 			>
 				{skills.map((skill, index) => {
 					const Icon = skill.Icon;
@@ -72,7 +73,7 @@ export default function Skills({}: Props) {
 							onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) =>
 								removeHoverAnimation(e)
 							}
-							className="group flex origin-center transform items-center justify-center gap-4 rounded-sm border border-neutral-700 p-4 sm:justify-start md:origin-top"
+							className="group flex origin-center transform items-center justify-center gap-5 rounded-sm border border-neutral-700 p-4 sm:justify-start md:origin-top"
 						>
 							<div className="pointer-events-none relative select-none transition group-hover:scale-110 sm:group-hover:scale-110">
 								<Icon className="h-8 w-8" />
