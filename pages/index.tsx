@@ -10,6 +10,7 @@ import Chess from "../components/Chess";
 import ModelViewer from "../components/ModelViewer";
 import { GetStaticProps } from "next/types";
 import WorkExperience from "../components/WorkExperience";
+import Skills from "../components/Skills";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,8 +38,13 @@ export default function Home({ repoCount }: any) {
 			</section>
 
 			{/* Experience */}
-			<section id="experience" className="snap-end">
+			<section id="experience" className="snap-center">
 				<WorkExperience />
+			</section>
+
+			{/* Skills */}
+			<section id="skills" className="snap-start">
+				<Skills />
 			</section>
 		</div>
 	);
