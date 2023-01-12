@@ -70,6 +70,7 @@ export default function Skills({}: Props) {
 							onMouseMove={(e: React.MouseEvent<HTMLDivElement>) =>
 								showHoverAnimation(e)
 							}
+							key={index}
 							onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) =>
 								removeHoverAnimation(e)
 							}

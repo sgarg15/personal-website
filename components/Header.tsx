@@ -10,7 +10,9 @@ export default function Header({}: Props) {
 		<header className="flex-items-start sticky top-0 z-20 mx-auto flex max-w-7xl justify-between p-5 xl:items-center">
 			{/* Icons */}
 			<div className="flex items-center">
-				<ModelViewer modelPath={"/queenTest.glb"} />
+				<div className="h-16 w-14">
+					<ModelViewer modelPath={"/queenTest.glb"} intensity={0.3} />
+				</div>
 				<motion.div
 					initial={{
 						x: -100,
@@ -68,7 +70,7 @@ export default function Header({}: Props) {
 					bgColor="transparent"
 				/>
 
-				<p className="hidden text-sm uppercase text-gray-400 md:inline-flex">
+				<p className="hidden select-none text-sm uppercase text-gray-400 md:inline-flex">
 					Get in Touch
 				</p>
 			</motion.div>
