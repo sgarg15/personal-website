@@ -11,6 +11,7 @@ import ModelViewer from "../components/ModelViewer";
 import { GetStaticProps } from "next/types";
 import WorkExperience from "../components/WorkExperience";
 import Skills from "../components/Skills";
+import Projects from "../components/Projects";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,16 @@ export default function Home({ repoCount }: any) {
 
 			{/* <Cube /> */}
 			{/* <Chess /> */}
+			{/* 
+			<div className="flex h-full w-full">
+				<ModelViewer
+					modelPath={"/MapModel.glb"}
+					scale={0.2}
+					intensity={0.8}
+					position={[0, 0, 0]}
+					autoRotateSpeed={0.001}
+				/>
+			</div> */}
 
 			{/* Header */}
 			<Header />
@@ -45,6 +56,11 @@ export default function Home({ repoCount }: any) {
 			{/* Skills */}
 			<section id="skills" className="snap-start">
 				<Skills />
+			</section>
+
+			{/* Projects */}
+			<section id="projects" className="snap-center">
+				<Projects />
 			</section>
 		</div>
 	);

@@ -35,13 +35,13 @@ export default function WorkExperience({}: Props) {
 
 		const leftButton = document.querySelector(".btn-scroll-left");
 		if (leftButton) {
-			console.log(leftButton);
+			// console.log(leftButton);
 			leftButton.addEventListener("click", handleLeftScroll);
 		}
 
 		const rightButton = document.querySelector(".btn-scroll-right");
 		if (rightButton) {
-			console.log(rightButton);
+			// console.log(rightButton);
 
 			rightButton.addEventListener("click", handleRightScroll);
 		}
