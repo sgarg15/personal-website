@@ -26,7 +26,7 @@ export default function Projects({}: Props) {
 		const handleRightScroll = () => {
 			if (containerRef.current) {
 				containerRef.current.scrollBy({
-					left: 500,
+					left: 700,
 					behavior: "smooth",
 				});
 			}
@@ -80,16 +80,26 @@ export default function Projects({}: Props) {
 					className="no-scrollbar flex w-full snap-x snap-mandatory space-x-5 overflow-x-scroll p-10"
 				>
 					{/* Project Cards */}
-					<ProjectCard projectName={"robotics"} url={"/robot.glb"} scale={9} />
+					<ProjectCard
+						projectName={"robotics"}
+						url={"/robot.glb"}
+						scale={9.5}
+						intensity={0.3}
+						initAngle={0.07}
+					/>
 					<ProjectCard
 						projectName={"endlessEnemies"}
 						url={"/MapModel.glb"}
 						scale={0.2}
+						intensity={1}
+						initAngle={0.2}
 					/>
 					<ProjectCard
 						projectName={"connectPharma"}
 						url={"/knight.glb"}
 						scale={0.2}
+						intensity={1}
+						initAngle={0.2}
 					/>
 				</div>
 				<button className="btn-scroll-right-project inset-y-0 w-16 pl-6 ">

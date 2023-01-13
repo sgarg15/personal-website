@@ -4,9 +4,15 @@ import ModelViewer from "./ModelViewer";
 
 type Props = {};
 
-export default function ProjectCard({ projectName = "", url = "", scale = 1 }) {
+export default function ProjectCard({
+	projectName = "",
+	url = "",
+	scale = 1,
+	intensity = 1,
+	initAngle = 0.2,
+}) {
 	return (
-		<article className="flex w-[500px] flex-shrink-0 cursor-pointer snap-center flex-row items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-80 transition-opacity duration-300 hover:opacity-100 md:w-[600px] xl:w-[900px]">
+		<article className="flex w-full flex-shrink-0 cursor-pointer snap-center flex-row items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-80 transition-opacity duration-300 hover:opacity-100 md:w-[600px] xl:w-full">
 			<div className="px-0 ">
 				<h4 className="text-4l font-light">QA Developer</h4>
 				<p className="mt-1 text-2xl font-bold">Boeing</p>
@@ -29,9 +35,10 @@ export default function ProjectCard({ projectName = "", url = "", scale = 1 }) {
 				<ModelViewer
 					modelPath={url}
 					scale={scale}
-					intensity={1}
+					intensity={intensity}
 					position={[0, 0, 0]}
 					autoRotateSpeed={0.0001}
+					initAngle={initAngle}
 				/>
 			</div>
 		</article>

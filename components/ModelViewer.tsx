@@ -9,9 +9,10 @@ const ModelViewer = ({
 	position = [0, 0.5, 0],
 	intensity = 1,
 	autoRotateSpeed = 0.005,
+	initAngle = 0.2,
 }) => {
 	return (
-		<Canvas>
+		<Canvas shadows>
 			<ambientLight intensity={intensity} />
 			<ambientLight intensity={intensity * 0.1} />
 			<spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
@@ -22,6 +23,7 @@ const ModelViewer = ({
 					scale={scale}
 					position={position}
 					autoRotateSpeed={autoRotateSpeed}
+					initAngle={initAngle}
 				/>
 				<OrbitControls enablePan={false} enableZoom={false} autoRotate />
 			</Suspense>
