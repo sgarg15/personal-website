@@ -12,6 +12,7 @@ import { GetStaticProps } from "next/types";
 import WorkExperience from "../components/WorkExperience";
 import Skills from "../components/Skills";
 import Projects from "../components/Projects";
+import ContactMe from "../components/ContactMe";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -61,6 +62,11 @@ export default function Home({ repoCount }: any) {
 			{/* Projects */}
 			<section id="projects" className="snap-center">
 				<Projects />
+			</section>
+
+			{/* Contact */}
+			<section id="contact" className="snap-start">
+				<ContactMe />
 			</section>
 		</div>
 	);
