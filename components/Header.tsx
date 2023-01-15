@@ -2,6 +2,7 @@ import React from "react";
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 import ModelViewer from "./ModelViewer";
+import Link from "next/link";
 
 type Props = {};
 
@@ -69,10 +70,11 @@ export default function Header({}: Props) {
 					fgColor="gray"
 					bgColor="transparent"
 				/>
-
-				<p className="hidden select-none text-sm uppercase text-gray-400 md:inline-flex">
-					Get in Touch
-				</p>
+				<Link href="#contact">
+					<button className="hidden select-none text-sm uppercase text-gray-400 md:inline-flex">
+						Get in Touch
+					</button>
+				</Link>
 			</motion.div>
 		</header>
 	);
