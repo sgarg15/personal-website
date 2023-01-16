@@ -12,9 +12,9 @@ export default function ExperienceCard({}: Props) {
 		if (elementRef.current) {
 			new VanillaTilt(elementRef.current, {
 				max: 2, // maximum tilt angle
-				perspective: 1000, // perspective value
-				scale: 1.02, // scale on hover
-				speed: 200, // tilt speed
+				perspective: 3000, // perspective value
+				scale: 1.01, // scale on hover
+				speed: 100, // tilt speed
 			});
 		}
 	}, []);
@@ -22,7 +22,7 @@ export default function ExperienceCard({}: Props) {
 	return (
 		<article
 			ref={elementRef}
-			className="flex w-[500px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-50 transition-opacity duration-300 hover:opacity-100 md:w-[500px] xl:w-[900px]"
+			className="flex w-full flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-50 transition-opacity duration-300 hover:opacity-100 md:w-full xl:w-full"
 		>
 			<motion.img
 				initial={{
