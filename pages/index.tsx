@@ -40,7 +40,7 @@ export default function Home({ repoCount }: any) {
 			<Header />
 
 			{/* Hero */}
-			<section id="hero" className="snap-center">
+			<section id="hero" className=" snap-center">
 				<Hero />
 			</section>
 

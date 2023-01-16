@@ -18,10 +18,10 @@ export default function Hero({}: Props) {
 	});
 
 	return (
-		<div className="flex h-screen flex-col items-center justify-center overflow-hidden text-center">
+		<div className="flex h-screen translate-y-10 flex-col items-center justify-center  text-center">
 			<BackGroundCircles />
 			<Cube />
-			<div className="z-20">
+			<div className="z-20 ">
 				<h2 className="select-none pb-2 text-sm uppercase tracking-[15px] text-gray-500	">
 					Software Developer
 				</h2>
