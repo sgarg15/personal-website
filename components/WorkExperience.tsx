@@ -79,11 +79,11 @@ export default function WorkExperience({}: Props) {
 				</button>
 				<div
 					ref={containerRef}
-					className="no-scrollbar flex w-full snap-x snap-mandatory space-x-5 overflow-x-scroll p-10"
+					className="no-scrollbar flex w-full snap-x snap-mandatory space-x-5 overflow-x-scroll p-10 "
 				>
 					{/* Experience Cards */}
 					<ExperienceCard />
-					<ExperienceCard />
+					{/* <ExperienceCard /> */}
 				</div>
 				<button className="btn-scroll-right inset-y-0 w-16 pl-6 ">
 					<MdOutlineArrowForwardIos className="text-2xl" />

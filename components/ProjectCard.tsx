@@ -13,7 +13,7 @@ export default function ProjectCard({
 }) {
 	return (
 		<article className="flex w-full flex-shrink-0 cursor-pointer snap-center flex-row items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-80 transition-opacity duration-300 hover:opacity-100 md:w-[600px] xl:w-full">
-			<div className="px-0 ">
+			<div className="w-full select-none px-0">
 				<h4 className="text-4l font-light">QA Developer</h4>
 				<p className="mt-1 text-2xl font-bold">Boeing</p>
 				<div className="my-2 flex space-x-2"></div>
@@ -31,7 +31,7 @@ export default function ProjectCard({
 					<li>Attended many meetings in and out of office</li>
 				</ul>
 			</div>
-			<div className=" flex h-[400px] w-full cursor-grabbing">
+			<div className=" flex h-96 w-2/3 cursor-grabbing">
 				<ModelViewer
 					modelPath={url}
 					scale={scale}
