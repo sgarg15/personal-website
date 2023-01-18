@@ -25,14 +25,6 @@ type SkillType = {
 //Create SkillsData
 export const skills: SkillType[] = [
 	{
-		name: "HTML",
-		Icon: SiHtml5,
-	},
-	{
-		name: "CSS",
-		Icon: SiCss3,
-	},
-	{
 		name: "Javascript",
 		Icon: SiJavascript,
 	},
@@ -75,5 +67,13 @@ export const skills: SkillType[] = [
 	{
 		name: "Figma",
 		Icon: SiFigma,
+	},
+	{
+		name: "HTML",
+		Icon: SiHtml5,
+	},
+	{
+		name: "CSS",
+		Icon: SiCss3,
 	},
 ];

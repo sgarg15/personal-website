@@ -83,7 +83,7 @@ export default function WorkExperience({}: Props) {
 				>
 					{/* Experience Cards */}
 					<ExperienceCard />
-					<ExperienceCard />
+					{/* <ExperienceCard /> */}
 				</div>
 				<button className="btn-scroll-right inset-y-0 w-16 pl-6 ">
 					<MdOutlineArrowForwardIos className="text-2xl" />
