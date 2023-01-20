@@ -50,9 +50,9 @@ export default function Home({ repoCount }: any) {
 			</section>
 
 			{/* Experience */}
-			<section id="experience" className="snap-center">
+			{/* <section id="experience" className="snap-center">
 				<WorkExperience />
-			</section>
+			</section> */}
 
 			{/* Skills */}
 			<section id="skills" className="snap-start">
