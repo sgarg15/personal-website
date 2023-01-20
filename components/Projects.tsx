@@ -5,6 +5,7 @@ import {
 	MdOutlineArrowForwardIos,
 } from "react-icons/md";
 import ProjectCard from "./ProjectCard";
+import { projects } from "../content/projectsData";
 
 type Props = {};
 
@@ -80,27 +81,9 @@ export default function Projects({}: Props) {
 					className="no-scrollbar flex w-full snap-x snap-mandatory space-x-5 overflow-x-scroll p-10"
 				>
 					{/* Project Cards */}
-					<ProjectCard
-						projectName={"robotics"}
-						url={"/robot.glb"}
-						scale={9.5}
-						intensity={0.3}
-						initAngle={0.07}
-					/>
-					<ProjectCard
-						projectName={"endlessEnemies"}
-						url={"/MapModel.glb"}
-						scale={0.2}
-						intensity={1}
-						initAngle={0.2}
-					/>
-					<ProjectCard
-						projectName={"connectPharma"}
-						url={"/knight.glb"}
-						scale={0.2}
-						intensity={1}
-						initAngle={0.2}
-					/>
+					{projects.map((project, index) => {
+						return <ProjectCard key={index} project={project} />;
+					})}
 				</div>
 				<button className="btn-scroll-right-project inset-y-0 w-16 pl-6 ">
 					<MdOutlineArrowForwardIos className="text-2xl" />
