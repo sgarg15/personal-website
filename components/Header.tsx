@@ -34,16 +34,15 @@ export default function Header({}: Props) {
 						url="https://github.com/sgarg15"
 						fgColor="gray"
 						bgColor="transparent"
+						target="_blank"
+						rel="noopener noreferrer"
 					/>
 					<SocialIcon
-						url="https://github.com/sgarg15"
+						url="https://www.linkedin.com/in/satvikgarg15/"
 						fgColor="gray"
 						bgColor="transparent"
-					/>
-					<SocialIcon
-						url="https://github.com/sgarg15"
-						fgColor="gray"
-						bgColor="transparent"
+						target="_blank"
+						rel="noopener noreferrer"
 					/>
 				</motion.div>
 			</div>

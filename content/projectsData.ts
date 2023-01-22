@@ -1,5 +1,6 @@
 export type ProjectType = {
 	name: string;
+	url: string;
 	position: string;
 	date: string;
 	description: string[];
@@ -13,6 +14,7 @@ export type ProjectType = {
 export const projects: ProjectType[] = [
 	{
 		name: "ConnectPharma",
+		url: "https://github.com/sgarg15/ConnectPharma",
 		position: "Software Developer",
 		date: "May 2020 - August 2020",
 		description: [
@@ -29,6 +31,7 @@ export const projects: ProjectType[] = [
 	},
 	{
 		name: "VEX Robotics",
+		url: "https://github.com/sgarg15/4549A-Public",
 		position: "Software Lead",
 		date: "September 2018 - June 2020",
 		description: [
@@ -44,6 +47,7 @@ export const projects: ProjectType[] = [
 	},
 	{
 		name: "Endless Enemies",
+		url: "https://github.com/sgarg15/Endless-Enemies",
 		position: "Lead Programmer",
 		date: "January 2021 - May 2021",
 		description: [

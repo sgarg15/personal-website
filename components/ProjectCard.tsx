@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import ModelViewer from "./ModelViewer";
 import { ProjectType } from "../content/projectsData";
+import { SocialIcon } from "react-social-icons";
 const parse = require("html-react-parser");
 
 type Props = {
@@ -12,7 +13,18 @@ export default function ProjectCard({ project }: Props) {
 	return (
 		<article className="flex w-full flex-shrink-0  snap-center flex-row items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-80 transition-opacity duration-300 hover:opacity-100 xl:w-full">
 			<div className="w-full select-none px-0">
-				<p className="mt-1 text-2xl font-bold">{project.name}</p>
+				<div className="flex">
+					<p className="mt-1 text-2xl font-bold">{project.name}</p>
+					<SocialIcon
+						url={project.url}
+						fgColor="gray"
+						bgColor="transparent"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="ml-2"
+					/>
+				</div>
+
 				<h4 className="text-4l font-light">{project.position}</h4>
 				<div className="my-2 flex space-x-2"></div>
 				<p className="py-5 uppercase text-gray-300">{project.date}</p>
