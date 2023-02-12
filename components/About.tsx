@@ -21,7 +21,7 @@ export default function About({ repoCount }: any) {
 			transition={{
 				duration: 1.5,
 			}}
-			className="mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center	md:text-left"
+			className="flex mx-auto h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center	md:text-left"
 		>
 			<h3 className=" select-none pl-[20px] text-center text-2xl uppercase tracking-[20px] text-gray-500 max-md:mx-auto max-md:mt-4 max-md:text-center">
 				About
@@ -59,23 +59,23 @@ export default function About({ repoCount }: any) {
 						found on my resume.
 					</p>
 
-					<div className="ml-10 flex flex-col ">
+					<div className="flex ml-10 flex-col ">
 						<div className="flex items-center">
 							<BsGithub className="mr-5 inline-block text-3xl" />
 							<p className="text-left text-base uppercase tracking-widest text-gray-300">
 								{repoCount} Repositories
 							</p>
 						</div>
-						<div className="mt-5 flex items-center">
+						<div className="flex mt-5 items-center">
 							<BsCode className="mr-5 inline-block text-3xl" />
 							<p className="text-left text-base uppercase tracking-widest text-gray-300 ">
 								{date.getFullYear() - 2017} Years of Programming
 							</p>
 						</div>
-						<div className="mt-5 flex cursor-pointer items-center text-left">
+						<div className="flex mt-5 cursor-pointer items-center text-left">
 							<AiOutlinePaperClip className="mr-5 inline-block text-3xl" />
 							<p
-								onClick={handleClick}
+								onClick={handleResumeClick}
 								className="text-base uppercase tracking-widest text-gray-300 "
 							>
 								Download My Resume
@@ -88,7 +88,7 @@ export default function About({ repoCount }: any) {
 	);
 }
 
-function handleClick() {
-	window.open("/Resume.pdf");
+function handleResumeClick() {
+	window.open("/Satvik Resume.pdf");
 }
 
