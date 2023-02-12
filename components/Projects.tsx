@@ -13,7 +13,7 @@ export default function Projects({}: Props) {
 	const containerRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		console.log(containerRef.current);
+		// console.log(containerRef.current);
 
 		const handleLeftScroll = () => {
 			if (containerRef.current) {
@@ -35,13 +35,13 @@ export default function Projects({}: Props) {
 
 		const leftButton = document.querySelector(".btn-scroll-left-project");
 		if (leftButton) {
-			console.log(leftButton);
+			// console.log(leftButton);
 			leftButton.addEventListener("click", handleLeftScroll);
 		}
 
 		const rightButton = document.querySelector(".btn-scroll-right-project");
 		if (rightButton) {
-			console.log(rightButton);
+			// console.log(rightButton);
 			rightButton.addEventListener("click", handleRightScroll);
 		}
 
@@ -66,7 +66,7 @@ export default function Projects({}: Props) {
 			transition={{
 				duration: 1.5,
 			}}
-			className="relative mx-auto h-screen max-w-full flex-col items-center justify-evenly px-10 pt-24 text-left md:flex-row"
+			className="relative mx-auto h-screen max-w-6xl flex-col items-center justify-center px-10 pt-20 text-center md:flex-row md:text-left"
 		>
 			<h3 className="select-none pl-[20px] text-center text-2xl uppercase tracking-[20px] text-gray-500">
 				Projects

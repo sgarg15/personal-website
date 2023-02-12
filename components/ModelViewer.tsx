@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Stage } from "@react-three/drei";
 import GltfModel from "./GltfModel";
 
 const ModelViewer = ({
@@ -12,7 +12,7 @@ const ModelViewer = ({
 	initAngle = 0.2,
 }) => {
 	return (
-		<Canvas shadows>
+		<Canvas shadows frameloop="demand">
 			<ambientLight intensity={intensity} />
 			<ambientLight intensity={intensity * 0.1} />
 			<spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
