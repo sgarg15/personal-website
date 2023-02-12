@@ -66,14 +66,14 @@ export default function Projects({}: Props) {
 			transition={{
 				duration: 1.5,
 			}}
-			className="relative mx-auto h-screen max-w-6xl flex-col items-center justify-center px-10 pt-20 text-center md:flex-row md:text-left"
+			className="relative mx-auto h-screen max-w-6xl flex-col items-center justify-center px-10 pt-24 text-center md:flex-row md:text-left"
 		>
-			<h3 className="select-none pl-[20px] text-center text-2xl uppercase tracking-[20px] text-gray-500">
+			<h3 className="select-none pl-[20px] text-center text-2xl uppercase tracking-[20px] text-gray-500 ">
 				Projects
 			</h3>
 
 			<div className="flex flex-row">
-				<button className="btn-scroll-left-project inset-y-0 w-16 pr-6">
+				<button className="btn-scroll-left-project inset-y-0 w-1 pr-10">
 					<MdOutlineArrowBackIosNew className="text-2xl" />
 				</button>
 				<div
@@ -85,7 +85,7 @@ export default function Projects({}: Props) {
 						return <ProjectCard key={index} project={project} />;
 					})}
 				</div>
-				<button className="btn-scroll-right-project inset-y-0 w-16 pl-6 ">
+				<button className="btn-scroll-right-project inset-y-0 w-1 pl-6 ">
 					<MdOutlineArrowForwardIos className="text-2xl" />
 				</button>
 			</div>
