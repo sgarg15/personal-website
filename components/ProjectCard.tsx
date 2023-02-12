@@ -11,25 +11,27 @@ type Props = {
 
 export default function ProjectCard({ project }: Props) {
 	return (
-		<article className="flex w-full flex-shrink-0  snap-center flex-row items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-80 transition-opacity duration-300 hover:opacity-100 xl:w-full">
+		<article className="flex w-full flex-shrink-0  snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-80 transition-opacity duration-300 hover:opacity-100 lg:flex-row xl:w-full">
 			<div className="w-full select-none px-0">
-				<div className="flex">
-					<p className="mt-1 text-2xl font-bold">{project.name}</p>
-					<SocialIcon
-						url={project.url}
-						fgColor="gray"
-						bgColor="transparent"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="ml-2"
-					/>
+				<div className="text-center lg:text-left">
+					<div className="flex justify-center pl-10 md:pl-0 lg:justify-start">
+						<p className="mt-1 text-2xl font-bold">{project.name}</p>
+						<SocialIcon
+							url={project.url}
+							fgColor="gray"
+							bgColor="transparent"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="ml-2"
+						/>
+					</div>
+
+					<h4 className="text-4l font-light">{project.position}</h4>
+					<div className="flex my-2 space-x-2"></div>
+					<p className="pb-5 uppercase text-gray-300">{project.date}</p>
 				</div>
 
-				<h4 className="text-4l font-light">{project.position}</h4>
-				<div className="my-2 flex space-x-2"></div>
-				<p className="py-5 uppercase text-gray-300">{project.date}</p>
-
-				<ul className="ml-5 list-disc space-y-4 text-lg">
+				<ul className="ml-5 list-disc space-y-4 text-base md:text-lg">
 					{project.description.map((desc, index) => {
 						return <li key={index}>{parse(desc)}</li>;
 					})}
@@ -42,7 +44,7 @@ export default function ProjectCard({ project }: Props) {
 					<li>Attended many meetings in and out of office</li> */}
 				</ul>
 			</div>
-			<div className=" flex h-96 w-2/3 cursor-grabbing">
+			<div className="flex h-40 w-40 cursor-grabbing md:h-60 md:w-1/3 lg:w-2/3 ">
 				<ModelViewer
 					modelPath={project.threeDModel}
 					scale={project.scale}

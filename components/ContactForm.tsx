@@ -6,13 +6,26 @@ type Props = {};
 function ContactForm({}: Props) {
 	const formRef = useRef<HTMLFormElement>(null!);
 
+	const handleSubmit = (event: React.MouseEvent<HTMLButtonElement>) => {
+		event.preventDefault();
+
+		const formData = new FormData(formRef.current);
+
+		const data = Object.fromEntries(formData);
+
+		// console.log(data);
+
+		//clear data
+		formRef.current.reset();
+	};
+
 	return (
 		<motion.form
 			ref={formRef}
 			initial="hidden"
 			whileInView="visible"
 			viewport={{ once: true }}
-			className="mx-auto my-10 flex w-full max-w-xl flex-col items-center dark:text-gray-300"
+			className="flex mx-auto my-10 w-full max-w-xl flex-col items-center dark:text-gray-300"
 		>
 			<div className="grid w-full grid-cols-2 gap-6 ">
 				<motion.div className="group relative z-0 mb-6 w-full">
@@ -102,7 +115,8 @@ function ContactForm({}: Props) {
 				>
 					<button
 						type="submit"
-						className="dark:bg-darkSecondary relative  w-full overflow-hidden rounded-lg bg-neutral-800 px-4 py-3 text-center text-sm font-medium text-white outline-none transition duration-300 active:scale-95 disabled:opacity-50 disabled:active:scale-100"
+						onClick={handleSubmit}
+						className="dark:bg-darkSecondary relative  w-full overflow-hidden rounded-lg bg-neutral-800 px-4 py-3 text-center text-sm font-medium text-white outline-none transition duration-300 disabled:opacity-50 active:scale-95 disabled:active:scale-100"
 					>
 						Send
 					</button>

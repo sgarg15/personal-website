@@ -13,7 +13,7 @@ export default function WorkExperience({}: Props) {
 	const containerRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		console.log(containerRef.current);
+		// console.log(containerRef.current);
 
 		const handleLeftScroll = () => {
 			if (containerRef.current) {
