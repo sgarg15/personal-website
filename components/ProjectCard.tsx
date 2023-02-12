@@ -11,7 +11,7 @@ type Props = {
 
 export default function ProjectCard({ project }: Props) {
 	return (
-		<article className="flex w-full flex-shrink-0  snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-80 transition-opacity duration-300 hover:opacity-100 lg:flex-row xl:w-full">
+		<article className="flex w-full flex-shrink-0  snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-7 opacity-80 transition-opacity duration-300 hover:opacity-100 lg:flex-row xl:w-full">
 			<div className="w-full select-none px-0">
 				<div className="text-center lg:text-left">
 					<div className="flex justify-center pl-10 md:pl-0 lg:justify-start">
@@ -44,7 +44,7 @@ export default function ProjectCard({ project }: Props) {
 					<li>Attended many meetings in and out of office</li> */}
 				</ul>
 			</div>
-			<div className="flex h-40 w-40 cursor-grabbing md:h-60 md:w-1/3 lg:w-2/3 ">
+			<div className="flex h-40 w-40 cursor-grabbing md:h-60 md:w-1/3 lg:w-1/3 ">
 				<ModelViewer
 					modelPath={project.threeDModel}
 					scale={project.scale}

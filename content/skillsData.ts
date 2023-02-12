@@ -13,6 +13,8 @@ import {
 	SiC,
 	SiCplusplus,
 	SiFigma,
+	SiJava,
+	SiDart,
 } from "react-icons/si";
 import { IconType } from "react-icons/lib";
 
@@ -35,6 +37,14 @@ export const skills: SkillType[] = [
 	{
 		name: "React.js",
 		Icon: SiReact,
+	},
+	{
+		name: "Java",
+		Icon: SiJava,
+	},
+	{
+		name: "Dart",
+		Icon: SiDart,
 	},
 	{
 		name: "Next.js",
