@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Stage } from "@react-three/drei";
+import { OrbitControls, Stage, useGLTF } from "@react-three/drei";
 import GltfModel from "./GltfModel";
 
 const ModelViewer = ({
@@ -11,6 +11,7 @@ const ModelViewer = ({
 	autoRotateSpeed = 0.005,
 	initAngle = 0.2,
 }) => {
+	useGLTF.preload(modelPath);
 	return (
 		<Canvas shadows frameloop="demand">
 			<ambientLight intensity={intensity} />

@@ -16,12 +16,13 @@ import ContactMe from "../components/ContactMe";
 import { FaArrowUp } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { MobilePlaceHolder } from "../components/MobilePlaceHolder";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ repoCount }: any) {
 	return (
-		<div className=" z-0 h-screen snap-y snap-mandatory scroll-smooth bg-[rgb(36,36,36)] text-white overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/40 scrollbar-thumb-rounded">
+		<div className=" z-0 h-screen snap-y bg-[rgb(36,36,36)] text-white overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/40 scrollbar-thumb-rounded sm:snap-mandatory sm:scroll-smooth">
 			<Head>
 				<title>Satvik's Portfolio</title>
 			</Head>
@@ -43,12 +44,16 @@ export default function Home({ repoCount }: any) {
 			<Header />
 
 			{/* Hero */}
-			<section id="hero" className="snap-always snap-center">
+			<section id="hero" className="snap-center snap-always">
 				<Hero />
 			</section>
 
+			<section className="snap-center snap-always">
+				<MobilePlaceHolder />
+			</section>
+
 			{/* About */}
-			<section id="about" className="snap-center">
+			<section id="about" className="hidden snap-center sm:block">
 				<About repoCount={repoCount} />
 			</section>
 
@@ -58,23 +63,23 @@ export default function Home({ repoCount }: any) {
 			</section> */}
 
 			{/* Skills */}
-			<section id="skills" className="snap-start">
+			<section id="skills" className="hidden snap-start sm:block">
 				<Skills />
 			</section>
 
 			{/* Projects */}
-			<section id="projects" className="snap-center ">
+			<section id="projects" className="hidden snap-center sm:block">
 				<Projects />
 			</section>
 
 			{/* Contact */}
-			<section id="contact" className="snap-start">
+			<section id="contact" className="hidden snap-start sm:block">
 				<ContactMe />
 			</section>
 
-			<Link href="#hero">
+			<Link href="#hero ">
 				<motion.button
-					className="fixed bottom-0 right-0 p-10"
+					className="fixed bottom-0 right-0 hidden p-10 sm:block"
 					initial={{ opacity: 0, scale: 0.5 }}
 					animate={{ opacity: 1, scale: 1 }}
 					transition={{
