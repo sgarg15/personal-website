@@ -44,7 +44,7 @@ export default function Home({ repoCount }: any) {
 			<Header />
 
 			{/* Hero */}
-			<section id="hero" className="sm:snap-center sm:snap-always">
+			<section id="hero" className="snap-center sm:snap-always">
 				<Hero />
 			</section>
 
