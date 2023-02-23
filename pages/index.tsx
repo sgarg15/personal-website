@@ -44,11 +44,14 @@ export default function Home({ repoCount }: any) {
 			<Header />
 
 			{/* Hero */}
-			<section id="hero" className="snap-center sm:snap-always">
+			<section
+				id="hero"
+				className="snap-center overflow-hidden sm:snap-always sm:overflow-auto"
+			>
 				<Hero />
 			</section>
 
-			<section className="">
+			<section className="snap-center overflow-hidden sm:snap-always sm:overflow-auto">
 				<MobilePlaceHolder />
 			</section>
 
