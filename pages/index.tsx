@@ -22,7 +22,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ repoCount }: any) {
 	return (
-		<div className=" z-0 h-screen snap-y bg-[rgb(36,36,36)] text-white overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/40 scrollbar-thumb-rounded sm:snap-mandatory sm:scroll-smooth">
+		<div className=" z-0 h-screen bg-[rgb(36,36,36)] text-white overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/40 scrollbar-thumb-rounded sm:snap-y sm:snap-mandatory sm:scroll-smooth">
 			<Head>
 				<title>Satvik's Portfolio</title>
 			</Head>
@@ -44,11 +44,11 @@ export default function Home({ repoCount }: any) {
 			<Header />
 
 			{/* Hero */}
-			<section id="hero" className="snap-center snap-always">
+			<section id="hero" className="sm:snap-center sm:snap-always">
 				<Hero />
 			</section>
 
-			<section className="snap-center snap-always">
+			<section className="">
 				<MobilePlaceHolder />
 			</section>
 
