@@ -17,12 +17,13 @@ import { FaArrowUp } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { MobilePlaceHolder } from "../components/MobilePlaceHolder";
+import DrawingBoard from "../components/AI-Page/DrawingBoard";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ repoCount }: any) {
 	return (
-		<div className=" z-0 h-screen snap-y bg-[rgb(36,36,36)] text-white overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/40 scrollbar-thumb-rounded sm:snap-mandatory sm:scroll-smooth">
+		<div className=" flex h-screen items-center justify-center">
 			<Head>
 				<title>Satvik's Portfolio</title>
 			</Head>
@@ -40,64 +41,7 @@ export default function Home({ repoCount }: any) {
 				/>
 			</div> */}
 
-			{/* Header */}
-			<Header />
-
-			{/* Hero */}
-			<section id="hero" className="snap-center overflow-hidden sm:snap-always">
-				<Hero />
-			</section>
-
-			<section className="snap-center overflow-hidden sm:hidden sm:snap-always sm:overflow-auto">
-				<MobilePlaceHolder />
-			</section>
-
-			{/* About */}
-			<section id="about" className="hidden snap-center sm:block">
-				<About repoCount={repoCount} />
-			</section>
-
-			{/* Experience */}
-			{/* <section id="experience" className="snap-center">
-				<WorkExperience />
-			</section> */}
-
-			{/* Skills */}
-			<section id="skills" className="hidden snap-start sm:block">
-				<Skills />
-			</section>
-
-			{/* Projects */}
-			<section id="projects" className="hidden snap-center sm:block">
-				<Projects />
-			</section>
-
-			{/* Contact */}
-			<section id="contact" className="hidden snap-start sm:block">
-				<ContactMe />
-			</section>
-
-			<Link href="#hero ">
-				<motion.button
-					className="fixed bottom-0 right-0 hidden p-10 sm:block"
-					initial={{ opacity: 0, scale: 0.5 }}
-					animate={{ opacity: 1, scale: 1 }}
-					transition={{
-						default: {
-							duration: 0.3,
-							ease: [0, 0.71, 0.2, 1.01],
-						},
-						scale: {
-							type: "spring",
-							damping: 5,
-							stiffness: 100,
-							restDelta: 0.001,
-						},
-					}}
-				>
-					<FaArrowUp size={25} />
-				</motion.button>
-			</Link>
+			<DrawingBoard />
 		</div>
 	);
 }
