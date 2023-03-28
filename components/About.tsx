@@ -21,7 +21,7 @@ export default function About({ repoCount }: any) {
 			transition={{
 				duration: 1.5,
 			}}
-			className="flex mx-auto h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center	md:text-left"
+			className="mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center	md:text-left"
 		>
 			<h3 className=" select-none pl-[20px] text-center text-2xl uppercase tracking-[20px] text-gray-500 max-md:mx-auto max-md:mt-4 max-md:text-center">
 				About
@@ -29,7 +29,7 @@ export default function About({ repoCount }: any) {
 
 			<div className="flex justify-center align-middle max-md:flex-col max-sm:flex">
 				<motion.img
-					src="/Satvik.jpg"
+					src="/Satvik2.jpg"
 					initial={{
 						x: -200,
 						opacity: 0,
@@ -42,7 +42,7 @@ export default function About({ repoCount }: any) {
 						opacity: 1,
 					}}
 					viewport={{ once: true }}
-					className="-mb-20 h-44 w-44 flex-shrink-0 items-center rounded-full object-cover text-center max-md:my-4 max-md:mx-auto max-md:h-[200px] max-md:w-[200px] max-md:items-center md:mb-0 md:h-[300px] md:w-[300px] md:rounded-lg xl:h-[400px] xl:w-[400px]"
+					className="-mb-20 h-44 w-44 flex-shrink-0 items-center rounded-full object-cover object-left text-center max-md:my-4 max-md:mx-auto max-md:h-[200px] max-md:w-[200px] max-md:items-center md:mb-0 md:h-[300px] md:w-[300px] md:rounded-lg xl:h-[400px] xl:w-[400px]"
 				/>
 
 				<div className="space-y-10 px-0 align-middle sm:my-4 sm:w-full md:px-10">
@@ -59,20 +59,20 @@ export default function About({ repoCount }: any) {
 						found on my resume.
 					</p>
 
-					<div className="flex ml-10 flex-col ">
+					<div className="ml-10 flex flex-col ">
 						<div className="flex items-center">
 							<BsGithub className="mr-5 inline-block text-3xl" />
 							<p className="text-left text-base uppercase tracking-widest text-gray-300">
 								{repoCount} Repositories
 							</p>
 						</div>
-						<div className="flex mt-5 items-center">
+						<div className="mt-5 flex items-center">
 							<BsCode className="mr-5 inline-block text-3xl" />
 							<p className="text-left text-base uppercase tracking-widest text-gray-300 ">
 								{date.getFullYear() - 2017} Years of Programming
 							</p>
 						</div>
-						<div className="flex mt-5 cursor-pointer items-center text-left">
+						<div className="mt-5 flex cursor-pointer items-center text-left">
 							<AiOutlinePaperClip className="mr-5 inline-block text-3xl" />
 							<p
 								onClick={handleResumeClick}
