@@ -60,7 +60,7 @@ export default function Skills({}: Props) {
 				whileInView="visible"
 				variants={FadeContainer}
 				viewport={{ once: true }}
-				className="my-10 grid w-full grid-cols-3 gap-4"
+				className="mt-40 mb-10 grid w-full grid-cols-3 gap-4"
 			>
 				{skills.map((skill, index) => {
 					const Icon = skill.Icon;

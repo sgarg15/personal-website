@@ -89,6 +89,5 @@ export default function About({ repoCount }: any) {
 }
 
 function handleResumeClick() {
-	window.open("/Satvik_Garg_Resume_T.pdf");
+	window.open("/Satvik_Garg_Resume.pdf");
 }
-

@@ -1,27 +1,56 @@
 import { motion } from "framer-motion";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 type Props = {};
 
 function ContactForm({}: Props) {
 	const formRef = useRef<HTMLFormElement>(null!);
+	const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">(
+		"idle"
+	);
+	const [statusMessage, setStatusMessage] = useState("");
 
-	const handleSubmit = (event: React.MouseEvent<HTMLButtonElement>) => {
+	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 
 		const formData = new FormData(formRef.current);
-
 		const data = Object.fromEntries(formData);
 
-		// console.log(data);
+		setStatus("sending");
+		setStatusMessage("");
 
-		//clear data
-		formRef.current.reset();
+		try {
+			const response = await fetch("/api/contact", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(data),
+			});
+
+			const responseData = await response.json();
+
+			if (!response.ok) {
+				throw new Error(responseData.message || "Unable to send message");
+			}
+
+			formRef.current.reset();
+			setStatus("success");
+			setStatusMessage("Thanks, your message was sent.");
+		} catch (error) {
+			setStatus("error");
+			setStatusMessage(
+				error instanceof Error
+					? error.message
+					: "Something went wrong. Please try again."
+			);
+		}
 	};
 
 	return (
 		<motion.form
 			ref={formRef}
+			onSubmit={handleSubmit}
 			initial="hidden"
 			whileInView="visible"
 			viewport={{ once: true }}
@@ -79,7 +108,7 @@ function ContactForm({}: Props) {
 			</motion.div>
 			<motion.div className="group relative z-0 mb-6 w-full">
 				<input
-					type="subject"
+					type="text"
 					name="subject"
 					id="floating_subject"
 					className="peer mt-2 block w-full appearance-none border-0 border-b-2 border-slate-500 bg-transparent py-2 px-0 text-sm text-gray-900 focus:border-black focus:outline-none focus:ring-0 dark:border-gray-400 dark:text-white dark:focus:border-white"
@@ -115,13 +144,22 @@ function ContactForm({}: Props) {
 				>
 					<button
 						type="submit"
-						onClick={handleSubmit}
+						disabled={status === "sending"}
 						className="dark:bg-darkSecondary relative  w-full overflow-hidden rounded-lg bg-neutral-800 px-4 py-3 text-center text-sm font-medium text-white outline-none transition duration-300 disabled:opacity-50 active:scale-95 disabled:active:scale-100"
 					>
-						Send
+						{status === "sending" ? "Sending..." : "Send"}
 					</button>
 				</div>
 			</motion.div>
+			{statusMessage && (
+				<p
+					className={`mt-4 text-sm ${
+						status === "success" ? "text-green-400" : "text-red-400"
+					}`}
+				>
+					{statusMessage}
+				</p>
+			)}
 		</motion.form>
 	);
 }

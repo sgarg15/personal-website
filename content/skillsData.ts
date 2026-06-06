@@ -1,21 +1,18 @@
 import {
-	SiHtml5,
-	SiCss3,
 	SiJavascript,
-	SiNextdotjs,
-	SiTailwindcss,
 	SiPython,
 	SiGit,
-	SiMysql,
-	SiFirebase,
 	SiTypescript,
 	SiReact,
 	SiC,
 	SiCplusplus,
-	SiFigma,
 	SiJava,
-	SiDart,
+	SiRos,
+	SiAutodesk,
 } from "react-icons/si";
+import { FaDraftingCompass, FaMicrochip, FaRobot } from "react-icons/fa";
+import { GiPathDistance } from "react-icons/gi";
+import { MdPrecisionManufacturing, MdSensors } from "react-icons/md";
 import { IconType } from "react-icons/lib";
 
 //Create SkillType
@@ -26,6 +23,38 @@ type SkillType = {
 
 //Create SkillsData
 export const skills: SkillType[] = [
+	{
+		name: "Robotics",
+		Icon: FaRobot,
+	},
+	{
+		name: "ROS",
+		Icon: SiRos,
+	},
+	{
+		name: "PID Control",
+		Icon: MdPrecisionManufacturing,
+	},
+	{
+		name: "Path Planning",
+		Icon: GiPathDistance,
+	},
+	{
+		name: "Embedded Systems",
+		Icon: FaMicrochip,
+	},
+	{
+		name: "Sensors",
+		Icon: MdSensors,
+	},
+	{
+		name: "CAD Design",
+		Icon: FaDraftingCompass,
+	},
+	{
+		name: "Autodesk",
+		Icon: SiAutodesk,
+	},
 	{
 		name: "Javascript",
 		Icon: SiJavascript,
@@ -43,18 +72,6 @@ export const skills: SkillType[] = [
 		Icon: SiJava,
 	},
 	{
-		name: "Dart",
-		Icon: SiDart,
-	},
-	{
-		name: "Next.js",
-		Icon: SiNextdotjs,
-	},
-	{
-		name: "Tailwind CSS",
-		Icon: SiTailwindcss,
-	},
-	{
 		name: "C Programming",
 		Icon: SiC,
 	},
@@ -69,21 +86,5 @@ export const skills: SkillType[] = [
 	{
 		name: "Git",
 		Icon: SiGit,
-	},
-	{
-		name: "Firebase",
-		Icon: SiFirebase,
-	},
-	{
-		name: "Figma",
-		Icon: SiFigma,
-	},
-	{
-		name: "HTML",
-		Icon: SiHtml5,
-	},
-	{
-		name: "CSS",
-		Icon: SiCss3,
 	},
 ];

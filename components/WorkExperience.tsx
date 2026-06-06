@@ -6,6 +6,7 @@ import {
 	MdOutlineArrowBackIosNew,
 	MdOutlineArrowForwardIos,
 } from "react-icons/md";
+import { experiences } from "../content/experienceData";
 
 type Props = {};
 
@@ -67,25 +68,26 @@ export default function WorkExperience({}: Props) {
 			transition={{
 				duration: 1.5,
 			}}
-			className="relative mx-auto h-screen max-w-full flex-col items-center justify-evenly px-10 pt-24 text-left md:flex-row"
+			className="relative mx-auto h-screen max-w-6xl flex-col items-center justify-center px-10 pt-24 text-center md:flex-row md:text-left"
 		>
 			<h3 className="select-none pl-[20px] text-center text-2xl uppercase tracking-[20px] text-gray-500">
 				Experience
 			</h3>
 
 			<div className="flex flex-row">
-				<button className=" btn-scroll-left inset-y-0 w-16 pr-6">
+				<button className=" btn-scroll-left inset-y-0 w-1 pr-10">
 					<MdOutlineArrowBackIosNew className="text-2xl" />
 				</button>
 				<div
 					ref={containerRef}
-					className="no-scrollbar flex w-full snap-x snap-mandatory space-x-5 overflow-x-scroll p-10 "
+					className="no-scrollbar flex w-full snap-x snap-mandatory space-x-5 overflow-x-scroll p-10"
 				>
 					{/* Experience Cards */}
-					<ExperienceCard />
-					{/* <ExperienceCard /> */}
+					{experiences.map((experience, index) => {
+						return <ExperienceCard key={index} experience={experience} />;
+					})}
 				</div>
-				<button className="btn-scroll-right inset-y-0 w-16 pl-6 ">
+				<button className="btn-scroll-right inset-y-0 w-1 pl-6 ">
 					<MdOutlineArrowForwardIos className="text-2xl" />
 				</button>
 			</div>
